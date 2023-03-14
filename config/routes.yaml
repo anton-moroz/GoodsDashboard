@@ -1,0 +1,27 @@
+good_controllers:
+    resource:
+        path: ../src/Controller/Good/
+        namespace: App\Controller\Good
+    type: annotation
+    prefix: /good/
+    name_prefix: good_
+
+auth_controllers:
+    resource:
+        path: ../src/Controller/Auth/
+        namespace: App\Controller\Auth
+    type: annotation
+    prefix: /auth/
+    name_prefix: auth_
+
+home:
+    controller: App\Controller\RedirectController::home
+    path: /
+
+user_settings_controllers:
+    resource:
+        path: ../src/Controller/User/Settings/
+        namespace: App\Controller\User\Settings
+    type: annotation
+    prefix: /user/settings
+    name_prefix: user_settings_

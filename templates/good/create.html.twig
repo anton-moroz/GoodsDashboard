@@ -1,0 +1,19 @@
+{% extends 'layout/app.html.twig' %}
+
+{% block title %}
+    {{ 'text.good.create'|trans }}
+{% endblock %}
+
+{% block app_header %}
+    <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+        {{ 'text.good.create'|trans }}
+    </h2>
+{% endblock %}
+
+{% block app_content %}
+    {{ include('components/common/go-back.html.twig', { textKey: 'text.good.back_to_list', url: path('good_list') }) }}
+
+    <div class="flex justify-center">
+        {{ include('components/good/form.html.twig', { goodForm: goodCreateForm, buttonTextKey: 'text.good.add' }) }}
+    </div>
+{% endblock %}

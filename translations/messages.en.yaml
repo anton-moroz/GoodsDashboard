@@ -1,0 +1,31 @@
+text:
+  good:
+    add: Add a new good
+    create: Create a new good
+    update: Update this good
+    edit: Edit good #%id% %name%
+    list: Goods list
+    back_to_list: Back to list
+    empty: No goods yet...
+  auth:
+    sign:
+      out: Sign out
+    register: Register
+    login: Login
+    account:
+      have: Already have account?
+      have_not: Don't have account?
+  user:
+    settings:
+      update: Update settings
+      account: Account settings
+    password: Password
+  settings: Settings
+  name: Name
+  price: Price
+  quantity: Quantity
+  menu:
+    user:
+      open: Open user menu
+    main:
+      open: Open main menu

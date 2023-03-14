@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.fa-1\.5x {
+    font-size: 1.5rem;
+}
+
+.min-h-screen-34-1 {
+    min-height: calc(100vh - 8.5rem - 1px);
+}

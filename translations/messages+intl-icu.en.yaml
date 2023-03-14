@@ -1,0 +1,7 @@
+text:
+  items: >-
+    {count, plural, 
+      =0 {No items} 
+      one {1 item} 
+      other {# items}
+    }

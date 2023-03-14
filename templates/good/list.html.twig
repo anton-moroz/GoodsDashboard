@@ -1,0 +1,27 @@
+{% extends 'layout/app.html.twig' %}
+
+{% block title %}
+    {{ 'text.good.list'|trans }}
+{% endblock %}
+
+{% block app_header %}
+    <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+        {{ 'text.good.list'|trans }}
+    </h2>
+{% endblock %}
+
+{% block app_content %}
+    <div class="py-8">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            {% if is_granted('ROLE_ADMIN') %}
+                <div class="flex justify-end mb-2 mr-4">
+                    <a class="items-center" href="{{ url('good_create') }}">{{ 'text.good.add'|trans }}
+                        <i class="fa fa-plus ml-2"></i>
+                    </a>
+                </div>
+            {% endif %}
+
+            {{ include('components/good/list.html.twig', { goods: goods }) }}
+        </div>
+    </div>
+{% endblock %}

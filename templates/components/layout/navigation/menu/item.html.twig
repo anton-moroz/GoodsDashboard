@@ -1,0 +1,6 @@
+{% set classes = classes ~ 'hover:text-white px-3 py-2 rounded-md font-medium ' %}
+{% set classes = classes ~ (app.request.requestUri is same as url ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700') %}
+
+<a href="{{ url }}" class="{{ classes }}">
+    {{ transKey|trans }}
+</a>

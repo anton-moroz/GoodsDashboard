@@ -1,0 +1,27 @@
+{% extends 'layout/layout.html.twig' %}
+
+{% block title %}
+    {{ 'text.auth.register'|trans }}
+{% endblock %}
+
+{% block content %}
+    <div class="font-sans text-gray-900 antialiased">
+        <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
+            <div class="w-full sm:max-w-md px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg">
+                <h1 class="text-2xl text-center font-bold mb-6">{{ 'text.auth.register'|trans }}</h1>
+
+                {{ form_start(registrationForm) }}
+                {{ form_row(registrationForm.username) }}
+                {{ form_row(registrationForm.plainPassword, { label: 'text.user.password'|trans }) }}
+                <input type="hidden" name="_csrf_token" value="{{ csrf_token('register') }}">
+
+                <div class="flex items-center justify-between">
+                    {{ include('components/common/btn-submit.html.twig', { transKey: 'text.auth.register' }) }}
+                    {{ include('components/common/link.html.twig', { transKey: 'text.auth.account.have', url: path('auth_login') }) }}
+                </div>
+
+                {{ form_end(registrationForm) }}
+            </div>
+        </div>
+    </div>
+{% endblock %}

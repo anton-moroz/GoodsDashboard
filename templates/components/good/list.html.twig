@@ -1,0 +1,18 @@
+<div class="px-6 pt-6 pb-3 bg-white md:overflow-x-auto shadow-sm sm:rounded-lg mb-4">
+    {% if goods|length > 0 %}
+        <div class="hidden col-span-8 border-b-2 border-gray-500 md:grid md:grid-cols-8">
+            <div class="text-xl font-medium col-span-3">{{ 'text.name'|trans }}</div>
+            <div class="text-xl font-medium col-span-2">{{ 'text.price'|trans }}</div>
+            <div class="text-xl font-medium col-span-2">{{ 'text.quantity'|trans }}</div>
+        </div>
+        <div class="divide-y-2 divide-gray-200 bg-white md:grid md:grid-cols-8">
+            {% for good in goods %}
+                {{ include('components/good/item.html.twig', { good: good }) }}
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="w-full text-center">
+            {{ 'text.good.empty'|trans }}
+        </div>
+    {% endif %}
+</div>
