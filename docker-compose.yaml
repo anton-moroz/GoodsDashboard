@@ -42,14 +42,14 @@ services:
     volumes:
       - ./:/var/www/html
     tty: true
-    env_file:
-      - .env
 
   database:
     container_name: symfony-database
     build:
       dockerfile: ./infrastructure/docker/mysql/Dockerfile
       context: .
+      args:
+        - MYSQL_VERSION=8.0
     ports:
       - "3306:3306"
     restart: always
